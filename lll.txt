@@ -1,1310 +1,231 @@
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-simma-mock  | Traceback (most recent call last):
-simma-mock  |   File "/usr/local/bin/uvicorn", line 8, in <module>
-simma-mock  |     sys.exit(main())
-simma-mock  |              ^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
-simma-mock  |     return self.main(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1406, in main
-simma-mock  |     rv = self.invoke(ctx)
-simma-mock  |          ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
-simma-mock  |     return ctx.invoke(self.callback, **ctx.params)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/click/core.py", line 824, in invoke
-simma-mock  |     return callback(*args, **kwargs)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 433, in main
-simma-mock  |     run(
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/main.py", line 606, in run
-simma-mock  |     server.run()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 75, in run
-simma-mock  |     return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/_compat.py", line 30, in asyncio_run
-simma-mock  |     return runner.run(main)
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/runners.py", line 118, in run
-simma-mock  |     return self._loop.run_until_complete(task)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-simma-mock  |     return future.result()
-simma-mock  |            ^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 79, in serve
-simma-mock  |     await self._serve(sockets)
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/server.py", line 86, in _serve
-simma-mock  |     config.load()
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/config.py", line 441, in load
-simma-mock  |     self.loaded_app = import_from_string(self.app)
-simma-mock  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
-simma-mock  |     module = importlib.import_module(module_str)
-simma-mock  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
-simma-mock  |     return _bootstrap._gcd_import(name[level:], package, level)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-simma-mock  |   File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-simma-mock  |   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-simma-mock  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-simma-mock  |   File "/app/main.py", line 2, in <module>
-simma-mock  |     from router import router
-simma-mock  |   File "/app/router.py", line 2, in <module>
-simma-mock  |     from services import *
-simma-mock  |   File "/app/services.py", line 1, in <module>
-simma-mock  |     from storage import storage
-simma-mock  |   File "/app/storage.py", line 25, in <module>
-simma-mock  |     storage = Storage()
-simma-mock  |               ^^^^^^^^^
-simma-mock  |   File "/app/storage.py", line 11, in __init__
-simma-mock  |     self.load()
-simma-mock  |   File "/app/storage.py", line 16, in load
-simma-mock  |     self.data = StorageModel(**json.load(f))
-simma-mock  |                                ^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
-simma-mock  |     return loads(fp.read(),
-simma-mock  |            ^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
-simma-mock  |     return _default_decoder.decode(s)
-simma-mock  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
-simma-mock  |     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-simma-mock  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-simma-mock  |   File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
-simma-mock  |     raise JSONDecodeError("Expecting value", s, err.value) from None
-simma-mock  | json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-[Ksimma-mock exited with code 1 (restarting)
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
+simma-agent  | Traceback (most recent call last):
+simma-agent  |   File "/app/main.py", line 3, in <module>
+simma-agent  |     from executor import Executor
+simma-agent  |   File "/app/executor.py", line 10
+simma-agent  |     for c in ["�������", "���������", "������� �������"]:
+simma-agent  |                  ^
+simma-agent  | SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xd1 in position 0: invalid continuation byte
