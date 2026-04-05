@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  mock-server:
+    build: ./mock_server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./mock_server/db.json:/app/db.json
+
+  agent:
+    build: ./agent
+    depends_on:
+      - mock-server
+    environment:
+      - API_URL=http://mock-server:8000/
+      - OPENAI_API_KEY=your_key_here
+
+env_file:
+- .env
