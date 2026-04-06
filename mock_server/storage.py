@@ -11,9 +11,13 @@ class Storage:
         self.load()
 
     def load(self):
-        if os.path.exists(DB_FILE):
-            with open(DB_FILE, "r", encoding="utf-8") as f:
-                self.data = StorageModel(**json.load(f))
+      if os.path.exists(DB_FILE):
+          with open(DB_FILE, "r", encoding="utf-8") as f:
+              content = f.read().strip()
+              if not content:
+                  self.data = StorageModel()
+              else:
+                  self.data = StorageModel(**json.loads(content))
 
     def save(self):
         with open(DB_FILE, "w", encoding="utf-8") as f:

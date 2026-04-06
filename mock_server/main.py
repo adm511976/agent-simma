@@ -13,3 +13,18 @@ def state():
 @app.post("/debug/reset")
 def reset_state():
     return reset()
+
+@app.post("/reset")
+def reset():
+    global db
+    db = {
+        "classes": {},
+        "elements": {},
+        "relations": [],
+        "links": [],
+        "diagrams": {},
+        "placements": []
+    }
+
+    save_db()
+    return {"status": "reset"}
